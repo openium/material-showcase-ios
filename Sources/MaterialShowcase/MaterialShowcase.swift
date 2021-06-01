@@ -616,7 +616,7 @@ extension MaterialShowcase {
   /// Default action when dimissing showcase
   /// Notifies delegate, removes views, and handles out-going animation
   @objc public func completeShowcase(animated: Bool = true, didTapTarget: Bool = false) {
-    if delegate != nil && delegate?.showCaseDidDismiss != nil {
+    if delegate != nil && delegate?.showCaseWillDismiss != nil {
       delegate?.showCaseWillDismiss?(showcase: self, didTapTarget: didTapTarget)
     }
     if animated {
