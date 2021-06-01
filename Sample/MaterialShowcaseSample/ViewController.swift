@@ -134,9 +134,13 @@ class ViewController: UIViewController {
         .temp(showcase2, completion: {
             print("Showcase 2")
         })
-        .temp(showcase3)
+        .temp(showcase3, completion: {
+            print("Showcase 3")
+        })
         .setKey(key: oneTimeKey)
-        .start()
+        .start(completion: {
+            print("End of sequence")
+        })
   }
 
   @IBAction func skipImageButton(_ sender: Any) {

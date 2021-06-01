@@ -15,18 +15,23 @@ public class MaterialShowcaseSequence {
     var showcaseArray : [(showCase: MaterialShowcase, handler: ShowCaseCompletionHandler?)] = []
     var currentCase : Int = 0
     var key : String?
+    var completionHandler: ShowCaseCompletionHandler? = nil
     public var hasShadow: Bool = true
-    
+
     public init() { }
     
     public func temp(_ showcase: MaterialShowcase, completion handler: ShowCaseCompletionHandler? = nil) -> MaterialShowcaseSequence {
         showcaseArray.append((showcase, handler))
         return self
     }
-    public func start() {
+    
+    public func start(completion handler: ShowCaseCompletionHandler? = nil) {
         guard !getUserState(key: self.key) else {
+            handler?()
             return
         }
+        
+        completionHandler = handler
         
         if let showCase = showcaseArray.first?.showCase {
             let handler = showcaseArray.first?.handler
@@ -70,6 +75,7 @@ public class MaterialShowcaseSequence {
                 return
             }
             UserDefaults.standard.set(true, forKey: key!)
+            completionHandler?()
             return
         }
         let showCase = showcaseArray[currentCase].showCase
