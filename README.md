@@ -189,7 +189,7 @@ Will appear once so we have key
 ```swift
 extension ViewController: MaterialShowcaseDelegate {
     func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
-        sequence.showCaseWillDismis()
+        sequence.showCaseDidDismiss()
     }
 }
 ```

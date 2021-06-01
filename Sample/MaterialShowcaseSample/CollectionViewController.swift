@@ -66,6 +66,6 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
 
 extension CollectionViewController: MaterialShowcaseDelegate {
   func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
-    sequence.showCaseWillDismis()
+    sequence.showCaseDidDismiss()
   }
 }

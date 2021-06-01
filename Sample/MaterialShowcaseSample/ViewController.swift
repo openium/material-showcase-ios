@@ -126,7 +126,17 @@ class ViewController: UIViewController {
     // With one key, the showcase sequence only shows one time
     // So, for this demo, it is better to create a random key
     let oneTimeKey = UUID().uuidString
-    sequence.temp(showcase1).temp(showcase2).temp(showcase3).setKey(key: oneTimeKey).start()
+    sequence.hasShadow = false
+    sequence
+        .temp(showcase1, completion: {
+            print("Showcase 1")
+        })
+        .temp(showcase2, completion: {
+            print("Showcase 2")
+        })
+        .temp(showcase3)
+        .setKey(key: oneTimeKey)
+        .start()
   }
 
   @IBAction func skipImageButton(_ sender: Any) {
@@ -185,6 +195,6 @@ extension ViewController: UITableViewDataSource {
 // If you need handle other actions (i.e: show other showcase), you can implement MaterialShowcaseDelegate
 extension ViewController: MaterialShowcaseDelegate {
   func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
-    sequence.showCaseWillDismis()
+    sequence.showCaseDidDismiss()
   }
 }
