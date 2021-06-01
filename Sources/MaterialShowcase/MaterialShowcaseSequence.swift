@@ -70,6 +70,8 @@ public class MaterialShowcaseSequence {
     
     public func showCaseDidDismiss() {
         guard self.showcaseArray.count > currentCase else {
+            completionHandler?()
+            
             //last index
             guard self.key != nil else {
                 return
