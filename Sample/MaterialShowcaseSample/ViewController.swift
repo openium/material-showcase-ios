@@ -85,7 +85,7 @@ class ViewController: UIViewController {
     showcase.secondaryText = "Click here to go into details"
     showcase.isTapRecognizerForTargetView = true
     //        showcase.delegate = self
-    showcase.backgroundRadius = 250
+    showcase.backgroundRadius = 500
     showcase.show(completion: nil)
   }
   

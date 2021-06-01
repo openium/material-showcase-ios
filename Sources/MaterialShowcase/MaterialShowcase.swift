@@ -574,9 +574,7 @@ extension MaterialShowcase {
       }
     } else {
       width = containerView.frame.size.width - (xPosition*2)
-      if backgroundView.frame.center.x - targetHolderRadius < 0 {
-        width = width - abs(backgroundView.frame.origin.x)
-      } else if (backgroundView.frame.center.x + targetHolderRadius >
+      if (backgroundView.frame.center.x + targetHolderRadius >
         UIScreen.main.bounds.width) {
         width = width - abs(backgroundView.frame.origin.x)
         xPosition = xPosition + abs(backgroundView.frame.origin.x)
