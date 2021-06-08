@@ -33,7 +33,7 @@ public extension MaterialShowcaseControllerDelegate {
   }
 }
 
-public protocol MaterialShowcaseControllerDataSource: AnyObjectSources/MaterialShowcase/MaterialShowcaseController.swift  {
+public protocol MaterialShowcaseControllerDataSource: AnyObject {
   func numberOfShowcases(for materialShowcaseController: MaterialShowcaseController) -> Int
   
   func materialShowcaseController(_ materialShowcaseController: MaterialShowcaseController,
