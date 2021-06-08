@@ -64,8 +64,20 @@ class ViewController: UIViewController {
     showcase.aniComeInDuration = 0.3
     showcase.aniRippleColor = UIColor.black
     showcase.aniRippleAlpha = 0.2
-    showcase.primaryText = "Action 2"
-    showcase.secondaryText = "Click here to go into long long long long long long long long long long long long long long long details"
+//    showcase.primaryText = "Action 2"
+    showcase.primaryAttributedText = NSAttributedString(
+        string: "Action 2",
+        attributes: [
+            .font: UIFont.systemFont(ofSize: 16, weight: .light)
+        ]
+    )
+//    showcase.secondaryText = "Click here to go into long long long long long long long long long long long long long long long details"
+    showcase.secondaryAttributedText = NSAttributedString(
+        string: "Click here to go into long long long long long long long long long long long long long long long details",
+        attributes: [
+            .font: UIFont.systemFont(ofSize: 16, weight: .bold)
+        ]
+    )
     showcase.secondaryTextSize = 14
     showcase.isTapRecognizerForTargetView = true
     showcase.backgroundRadius = 300

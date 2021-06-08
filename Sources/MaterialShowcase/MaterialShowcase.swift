@@ -7,7 +7,7 @@
 //
 import UIKit
 
-@objc public protocol MaterialShowcaseDelegate: class {
+@objc public protocol MaterialShowcaseDelegate: AnyObject {
   @objc optional func showCaseWillDismiss(showcase: MaterialShowcase, didTapTarget:Bool)
   @objc optional func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget:Bool)
 }
@@ -106,7 +106,9 @@ open class MaterialShowcase: UIView {
   @objc public var targetHolderColor: UIColor!
   // Text
   @objc public var primaryText: String!
+  @objc public var primaryAttributedText: NSAttributedString?
   @objc public var secondaryText: String!
+  @objc public var secondaryAttributedText: NSAttributedString?
   @objc public var primaryTextColor: UIColor!
   @objc public var secondaryTextColor: UIColor!
   @objc public var primaryTextSize: CGFloat = 0.0
@@ -522,13 +524,15 @@ extension MaterialShowcase {
     instructionView.primaryTextSize = primaryTextSize
     instructionView.primaryTextColor = primaryTextColor
     instructionView.primaryText = primaryText
-    
+    instructionView.primaryAttributedText = primaryAttributedText
+
     instructionView.secondaryTextAlignment = secondaryTextAlignment
     instructionView.secondaryTextFont = secondaryTextFont
     instructionView.secondaryTextSize = secondaryTextSize
     instructionView.secondaryTextColor = secondaryTextColor
     instructionView.secondaryText = secondaryText
-    
+    instructionView.secondaryAttributedText = secondaryAttributedText
+
     // Calculate x position
     var xPosition = LABEL_MARGIN
     

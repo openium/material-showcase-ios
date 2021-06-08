@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol MaterialShowcaseControllerDelegate: class {
+public protocol MaterialShowcaseControllerDelegate: AnyObject {
   
   func materialShowcaseController(_ materialShowcaseController: MaterialShowcaseController,
                                   materialShowcaseWillDisappear materialShowcase: MaterialShowcase,
@@ -33,7 +33,7 @@ public extension MaterialShowcaseControllerDelegate {
   }
 }
 
-public protocol MaterialShowcaseControllerDataSource: class {
+public protocol MaterialShowcaseControllerDataSource: AnyObjectSources/MaterialShowcase/MaterialShowcaseController.swift  {
   func numberOfShowcases(for materialShowcaseController: MaterialShowcaseController) -> Int
   
   func materialShowcaseController(_ materialShowcaseController: MaterialShowcaseController,
